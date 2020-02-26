@@ -1,0 +1,33 @@
+modLoader="javafml" #mandatory
+loaderVersion="[31,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+issueTrackerURL="http://my.issue.tracker/"
+
+
+[[mods]]
+modId="uwumod"
+version="1.0"
+displayName="uwu Mod"
+updateJSONURL="http://myurl.me/"
+displayURL="http://example.com/"
+logoFile="examplemod.png"
+credits="Minecraft Forge and Myself"
+authors="Wizardo"
+description='''
+Cheems
+'''
+
+
+[[dependencies.uwumod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[31,)"
+    ordering="NONE"
+    side="BOTH"
+
+
+[[dependencies.uwumod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
