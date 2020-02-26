@@ -1,11 +1,10 @@
 package wizardo.uwumod;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.server.FMLServerStoppedEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import wizardo.uwumod.init.itemInit;
 
 @Mod("wizuwumod")
 
@@ -18,20 +17,10 @@ public class uwuMod {
     public uwuMod() {
         instance = this;
 
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+        final ModLoadingContext modLoadingContext = ModLoadingContext.get();
+        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        MinecraftForge.EVENT_BUS.register(this);
+        itemInit.ITEMS.register(modEventBus);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
-
-    }
-    private void doClientStuff(final FMLCommonSetupEvent event) {
-
-    }
-    @SubscribeEvent
-    public void onServerStarting(FMLServerStoppedEvent event) {
-
-    }
 }

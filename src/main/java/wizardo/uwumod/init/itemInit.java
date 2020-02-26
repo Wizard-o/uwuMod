@@ -2,19 +2,17 @@ package wizardo.uwumod.init;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import wizardo.uwumod.uwuMod;
 
-@Mod.EventBusSubscriber(modid = uwuMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-@ObjectHolder(uwuMod.MOD_ID)
-public class itemInit {
-    public static final Item uwu_Chunk = null;
+public final class itemInit {
 
-    @SubscribeEvent
-    public static void registerItems(final RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName("uwu Chunk"));
-    }
+    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, uwuMod.MOD_ID);
+
+    public static final RegistryObject<Item> UWU_CHUNK = ITEMS.register("uwu Chunk", () -> new Item
+            (new Item.Properties().group(ItemGroup.MISC)));
+    public static final RegistryObject<Item> UWU_MIX = ITEMS.register("uwu Mix", () -> new Item
+            (new Item.Properties().group(ItemGroup.MISC)));
 }
