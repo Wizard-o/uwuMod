@@ -1,0 +1,6 @@
+{
+  "parent": "items/generated",
+  "textures": {
+    "layer0": "wiz_uwumod:items/uwuChunk"
+  }
+}
